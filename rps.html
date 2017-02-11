@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+ <meta charset="UTF-8">
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Index w/ Bootstrap</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+
+
+</head>
+<body>
+
+
+<h1>Press r, p, or s to play! </h1>
+
+<h2>Wins: <span id="wins-text"><strong>0</strong></span>
+
+<br>
+
+Ties: <span id="ties-text"><strong>0</strong></span>
+<br>
+
+Losses: <span id="losses-text"><strong>0</strong></span>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+</h2>
+
+
+
+
+
+ <!-- jQuery CDN -->
+ 
+
+
+  <script type="text/javascript">
+    
+  var winsText = document.getElementById("wins-text") ;
+  var lossText = document.getElementById("losses-text") ;
+  var tieText = document.getElementById("ties-text") ;
+  
+
+  var wins = 0;
+  var losses = 0;
+  var ties = 0;
+
+
+
+
+document.body.onkeyup = function(e){
+    if(e.keyCode == 82 || e.keyCode == 80 || e.keyCode == 83 ){
+  
+  var numbers = [0, 1, 2];
+
+  var item = numbers[Math.floor(Math.random()*numbers.length)];
+
+  if (item === 1) {item = "rock"}
+
+    else if (item === 0) {item = "scissors"}
+    else if (item === 2) {item = "paper"}
+
+     
+
+      if(e.keyCode == 82) {
+
+        if (item === "rock") {
+          ties++;
+          tieText.textContent = ties;
+      }
+        if (item === "paper") {
+
+            losses++;
+            lossText.textContent = losses;
+      } 
+        if (item === "scissors") {
+
+
+          wins++;
+          winsText.textContent = wins;
+      }
+
+
+
+      }
+
+      if(e.keyCode == 80) {
+
+        if (item === "rock") {
+
+
+          wins++;
+          winsText.textContent = wins;
+      }
+        if (item === "paper") {
+
+
+
+          ties++;
+          tieText.textContent = ties;
+      }
+        if (item === "scissors") {
+
+      losses++;
+            lossText.textContent = losses;}
+
+      }
+
+      if(e.keyCode == 83) {
+
+        if (item === "rock") {
+
+
+          wins++;
+          winsText.textContent = wins;
+      }
+        if (item === "paper") {
+
+            losses++;
+            lossText.textContent = losses;
+      }
+        if (item === "scissors") {
+
+
+          ties++;
+          tieText.textContent = ties;
+      }
+
+      }
+
+
+
+
+
+
+
+
+
+    }
+
+}
+
+
+
+  </script>
+
+</body>
+</html>
